@@ -1,4 +1,3 @@
-// Model for shop data
 class ShopItem {
   final String name;
   final String imagePath;

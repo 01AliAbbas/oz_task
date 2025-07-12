@@ -1,6 +1,7 @@
 import 'package:oz_task/ui/bottom_sheets/notice/notice_sheet.dart';
 import 'package:oz_task/ui/dialogs/info_alert/info_alert_dialog.dart';
 import 'package:oz_task/ui/views/home/home_view.dart';
+import 'package:oz_task/ui/views/profile/profile_view.dart';
 import 'package:oz_task/ui/views/startup/startup_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -9,7 +10,8 @@ import 'package:stacked_services/stacked_services.dart';
 @StackedApp(
   routes: [
     MaterialRoute(page: HomeView),
-    MaterialRoute(page: StartupView),
+    MaterialRoute(page: StartupView, initial: true),
+    MaterialRoute(page: ProfileView),
     // @stacked-route
   ],
   dependencies: [

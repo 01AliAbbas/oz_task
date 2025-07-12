@@ -3,7 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:oz_task/ui/common/app_colors.dart';
 
 class BottomNavBar extends StatefulWidget {
-  const BottomNavBar({super.key});
+  final int selectedIndex;
+  final Function(int) onItemTapped;
+  
+  const BottomNavBar({
+    super.key,
+    required this.selectedIndex,
+    required this.onItemTapped,
+  });
+  
   final List<BottomNavigationBarItem> items = const [
     BottomNavigationBarItem(
       icon: Icon(Icons.home),
@@ -27,14 +35,6 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  int selectedIndex = 0;
-  
-  void onItemTapped(int index) {
-    setState(() {
-      selectedIndex = index;
-    });
-  }
-  
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -51,11 +51,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
         borderRadius: BorderRadius.circular(30),
         child: BottomNavigationBar(
           items: widget.items,
-          currentIndex: selectedIndex,
+          currentIndex: widget.selectedIndex,
           selectedItemColor: eazyBlue,
           unselectedItemColor: Colors.grey,
           type: BottomNavigationBarType.shifting,
-          onTap: onItemTapped,
+          onTap: widget.onItemTapped,
           backgroundColor: Colors.transparent,
           elevation: 0,
           selectedLabelStyle: const TextStyle(
