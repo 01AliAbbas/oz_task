@@ -16,12 +16,12 @@ class ShopGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      physics: const NeverScrollableScrollPhysics(), // For nested scrolling
+      physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       padding: const EdgeInsets.symmetric(horizontal: 16),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        childAspectRatio: 0.65, // Increased height to fit content
+        childAspectRatio: 0.65,
         mainAxisSpacing: 16,
         crossAxisSpacing: 16,
       ),
@@ -62,7 +62,6 @@ class _ShopCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Shop Image with Rating Tag
             Stack(
               children: [
                 ClipRRect(

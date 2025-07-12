@@ -34,7 +34,6 @@ class OffersTabView extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           verticalSpaceMedium,
-          // Add your offers content here
           Container(
             margin: const EdgeInsets.all(16),
             padding: const EdgeInsets.all(20),

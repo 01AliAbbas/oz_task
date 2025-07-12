@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oz_task/ui/common/app_text_styles.dart';
 import 'package:oz_task/ui/common/ui_helpers.dart';
 
 class ProfileTabView extends StatelessWidget {
@@ -11,44 +12,53 @@ class ProfileTabView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           verticalSpaceMedium,
-          Row(
-            children: [
-              const CircleAvatar(
-                radius: 50,
-                backgroundColor: Colors.grey,
-                child: Icon(
-                  Icons.person,
-                  size: 60,
-                  color: Colors.white,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Row(
+              children: [
+                const CircleAvatar(
+                  radius: 30,
+                  backgroundColor: Colors.grey,
+                  child: Icon(
+                    Icons.person,
+                    size: 40,
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-            ],
-          ),
-          verticalSpaceSmall,
-          const Text(
-            'Your Profile',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
+                const SizedBox(width: 16),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        "Your Name", 
+                        style: AppTextStyles.title1,
+                      ),
+                      const SizedBox(height: 4),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Text(
+                          "Edit Profile",
+                          style: AppTextStyles.body.eazyBlue,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
-          ),
-          verticalSpaceSmall,
-          const Text(
-            'Manage your account settings',
-            style: TextStyle(
-              fontSize: 16,
-              color: Colors.grey,
-            ),
-            textAlign: TextAlign.center,
           ),
           verticalSpaceMedium,
-          // Profile options
-          _buildProfileOption(Icons.person, 'Edit Profile'),
-          _buildProfileOption(Icons.notifications, 'Notifications'),
-          _buildProfileOption(Icons.payment, 'Payment Methods'),
-          _buildProfileOption(Icons.help, 'Help & Support'),
-          _buildProfileOption(Icons.settings, 'Settings'),
-          _buildProfileOption(Icons.logout, 'Logout'),
+          _buildProfileOption(Icons.location_on, 'Shipping Address'),
+          _buildProfileOption(Icons.wallet_membership_outlined, 'Memebership'),
+          _buildProfileOption(Icons.favorite, 'Favorite'),
+          _buildProfileOption(Icons.contact_phone, 'Contact Us'),
+          _buildProfileOption(Icons.help, 'FAQ'),
+            ListTile(
+            leading: const Icon(Icons.logout, color: Colors.red),
+            title: const Text('Logout'),
+            onTap: () {},
+            )
         ],
       ),
     );
@@ -61,13 +71,10 @@ class ProfileTabView extends StatelessWidget {
         leading: Icon(icon),
         title: Text(title),
         trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-        onTap: () {
-          // Handle option tap
-        },
+        onTap: () {},
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
-        // tileColor: Colors.grey.shade50,
       ),
     );
   }

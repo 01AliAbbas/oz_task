@@ -20,7 +20,6 @@ class StartupView extends StackedView<StartupViewModel> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // Oz Logo
             Image.asset(
               'assets/Oz - Logo & Slogan - Blue on Transparent 1.png',
               width: 250,
@@ -29,7 +28,6 @@ class StartupView extends StackedView<StartupViewModel> {
             ),
             const SizedBox(height: 24),
             
-            // Loading indicator
             const CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(
                 eazyBlue, 
