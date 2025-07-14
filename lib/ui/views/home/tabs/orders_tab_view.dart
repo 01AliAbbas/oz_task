@@ -98,12 +98,12 @@ class _OrdersTabViewState extends State<OrdersTabView> with TickerProviderStateM
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(Icons.history, size: 64, color: Colors.grey),
-            SizedBox(height: 16),
+            verticalSpaceMedium,
             Text(
               'No Completed Orders',
               style: AppTextStyles.title1,
             ),
-            SizedBox(height: 8),
+            verticalSpaceSmall,
             Text(
               'Your completed orders will appear here',
               style: TextStyle(color: Colors.grey),
@@ -135,12 +135,12 @@ class _OrdersTabViewState extends State<OrdersTabView> with TickerProviderStateM
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(Icons.shopping_bag_outlined, size: 64, color: Colors.grey),
-          SizedBox(height: 16),
+          verticalSpaceMedium,
           Text(
             'No Orders in Process',
             style: AppTextStyles.title1,
           ),
-          SizedBox(height: 8),
+          verticalSpaceSmall,
           Text(
             'Your current orders will appear here',
             style: TextStyle(color: Colors.grey),
@@ -196,7 +196,7 @@ class _OrdersTabViewState extends State<OrdersTabView> with TickerProviderStateM
                 ),
               ],
             ),
-            const SizedBox(height: 8),
+            verticalSpaceSmall,
             // Order type
             Row(
               children: [
@@ -205,7 +205,7 @@ class _OrdersTabViewState extends State<OrdersTabView> with TickerProviderStateM
                   size: 16,
                   color: eazyBlue,
                 ),
-                const SizedBox(width: 4),
+                horizontalSpaceTiny,
                 Text(
                   orderType,
                   style: AppTextStyles.bodyLight.copyWith(
@@ -215,7 +215,7 @@ class _OrdersTabViewState extends State<OrdersTabView> with TickerProviderStateM
                 ),
               ],
             ),
-            const SizedBox(height: 12),
+            verticalSpaceSmall,
             // Total amount
             Text(
               'Total: ${totalAmount.toStringAsFixed(2)} BD',
@@ -224,7 +224,7 @@ class _OrdersTabViewState extends State<OrdersTabView> with TickerProviderStateM
                 color: Colors.black87,
               ),
             ),
-            const SizedBox(height: 16),
+            verticalSpaceMedium,
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [

@@ -16,6 +16,10 @@ class HomeViewModel extends BaseViewModel {
 
   int get selectedIndex => _selectedIndex;
 
+  // void navigateToSubscribeView() {
+  //   locator<NavigationService>().navigateToSubscribeView();
+  // }
+
   void setSelectedIndex(int index) {
     _selectedIndex = index;
     rebuildUi();

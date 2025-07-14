@@ -61,7 +61,7 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
                               Expanded(
                                 child: ListTile(
                                   leading: ImageIcon(
-                                    AssetImage("assets/Medal.png"),
+                                     const AssetImage("assets/Medal.png"),
                                     color: Colors.orange[700],
                                   ),
                                   title: Text(
@@ -84,10 +84,7 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
                               ),
                               Expanded(
                                 child: ListTile(
-                                  leading: Icon(
-                                    Icons.account_balance_wallet_outlined,
-                                    color: Colors.orange[700],
-                                  ),
+                                  leading: const ImageIcon( AssetImage("assets/coffe.png"), color: Color.fromARGB(255, 220, 205, 177),size: 30,),
                                   title: Text(
                                     'Oz Points',
                                     style: AppTextStyles.title2.black,

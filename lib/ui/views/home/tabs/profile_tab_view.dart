@@ -25,7 +25,7 @@ class ProfileTabView extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                const SizedBox(width: 16),
+                horizontalSpaceMedium,
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,7 +34,7 @@ class ProfileTabView extends StatelessWidget {
                         "Your Name", 
                         style: AppTextStyles.title1,
                       ),
-                      const SizedBox(height: 4),
+                      verticalSpaceSmall,
                       GestureDetector(
                         onTap: () {},
                         child: Text(

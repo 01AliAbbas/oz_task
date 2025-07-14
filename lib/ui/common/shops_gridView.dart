@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:oz_task/ui/common/app_colors.dart';
 import 'package:oz_task/ui/common/app_text_styles.dart';
 import 'package:oz_task/ui/common/shop_ItemModel.dart';
+import 'package:oz_task/ui/common/ui_helpers.dart';
 
 class ShopGrid extends StatelessWidget {
   final List<ShopItem> shops;
   final Function(int)? onShopTap;
-  
+
   const ShopGrid({
     super.key,
     required this.shops,
@@ -65,7 +66,8 @@ class _ShopCard extends StatelessWidget {
             Stack(
               children: [
                 ClipRRect(
-                  borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
+                  borderRadius:
+                      const BorderRadius.vertical(top: Radius.circular(12)),
                   child: Image.asset(
                     shop.imagePath,
                     height: 100,
@@ -78,7 +80,8 @@ class _ShopCard extends StatelessWidget {
                   top: 8,
                   left: 8,
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
                     decoration: BoxDecoration(
                       color: vintageCream,
                       borderRadius: BorderRadius.circular(4),
@@ -98,7 +101,7 @@ class _ShopCard extends StatelessWidget {
                           color: Colors.amber,
                           size: 14,
                         ),
-                        const SizedBox(width: 2),
+                        verticalSpaceTiny,
                         Text(
                           shop.rating.toStringAsFixed(1),
                           style: AppTextStyles.captionBold.black,
@@ -109,7 +112,6 @@ class _ShopCard extends StatelessWidget {
                 ),
               ],
             ),
-            
             Padding(
               padding: const EdgeInsets.all(8),
               child: Column(
@@ -122,9 +124,8 @@ class _ShopCard extends StatelessWidget {
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
-                  
-                  const SizedBox(height: 2),
-                  
+
+                  verticalSpaceTiny,
                   // Address
                   Text(
                     shop.address,
@@ -132,9 +133,8 @@ class _ShopCard extends StatelessWidget {
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
-                  
-                  const SizedBox(height: 6),
-                  
+
+                  verticalSpaceSmall,
                   // Status & Details Row
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -142,9 +142,10 @@ class _ShopCard extends StatelessWidget {
                       // Open/Closed Status
                       Container(
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 6, vertical: 2),
+                            horizontal: 6, vertical: 2),
                         decoration: BoxDecoration(
-                          color: shop.isOpen ? Colors.green[50] : Colors.red[50],
+                          color:
+                              shop.isOpen ? Colors.green[50] : Colors.red[50],
                           borderRadius: BorderRadius.circular(4),
                         ),
                         child: Text(
@@ -156,36 +157,36 @@ class _ShopCard extends StatelessWidget {
                           ),
                         ),
                       ),
-                      
+
                       // Distance
                       Text(
                         '${shop.distance} km',
-                        style: AppTextStyles.caption.grey.copyWith(fontSize: 10),
+                        style:
+                            AppTextStyles.caption.grey.copyWith(fontSize: 10),
                       ),
                     ],
                   ),
-                  
-                  const SizedBox(height: 4),
+                  verticalSpaceSmall,
                   if (shop.isOpen)
-                  // Delivery Time
-                  Text.rich(
-                    TextSpan(
-                      children: [
-                        const TextSpan(text: 'Est. '),
-                        TextSpan(
-                          text: '${shop.deliveryTime} min',
-                          style: AppTextStyles.caption.copyWith(
-                            color: shop.deliveryTime <= 30 
-                                ? Colors.green 
-                                : Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 10,
+                    // Delivery Time
+                    Text.rich(
+                      TextSpan(
+                        children: [
+                          const TextSpan(text: 'Est. '),
+                          TextSpan(
+                            text: '${shop.deliveryTime} min',
+                            style: AppTextStyles.caption.copyWith(
+                              color: shop.deliveryTime <= 30
+                                  ? Colors.green
+                                  : Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 10,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
+                      style: AppTextStyles.caption.copyWith(fontSize: 10),
                     ),
-                    style: AppTextStyles.caption.copyWith(fontSize: 10),
-                  ),
                 ],
               ),
             ),
@@ -195,4 +196,3 @@ class _ShopCard extends StatelessWidget {
     );
   }
 }
-

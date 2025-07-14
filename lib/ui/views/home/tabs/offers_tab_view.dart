@@ -52,7 +52,7 @@ class OffersTabView extends StatelessWidget {
                     color: Colors.orange,
                   ),
                 ),
-                SizedBox(height: 8),
+                verticalSpaceSmall,
                 Text(
                   'Get 20% off on your first order!',
                   style: TextStyle(

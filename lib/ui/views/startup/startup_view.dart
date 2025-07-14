@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:oz_task/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
 import 'package:oz_task/ui/common/app_colors.dart';
 
@@ -26,14 +27,13 @@ class StartupView extends StackedView<StartupViewModel> {
               height: 150,
               fit: BoxFit.contain,
             ),
-            const SizedBox(height: 24),
+            verticalSpaceLarge,
             
             const CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(
                 eazyBlue, 
               ),
             ),
-            const SizedBox(height: 16),
           ],
         ),
       ),
