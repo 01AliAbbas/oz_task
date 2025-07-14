@@ -35,11 +35,8 @@ class SubscribeDetailsView extends StackedView<SubscribeDetailsViewmodel> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 1. Ticket Card (same as clicked)
             createTicketCard("Discount up to 20%", "Learn for more info", "100"),
-            
-            verticalSpaceLarge,
-            
+            verticalSpaceMedium,
             Container(
               width: double.infinity,
               height: 200,
@@ -52,14 +49,14 @@ class SubscribeDetailsView extends StackedView<SubscribeDetailsViewmodel> {
               ),
             ),
             
-            verticalSpaceLarge,
+            verticalSpaceMedium,
 
             buildInfoSection(
               title: "How does this subscription plan work?",
               content: "If you have subscribed, this voucher will be added automatically to every transaction you make. There are no minimum purchases from certain stores, so you are free to make transactions every day!",
             ),
             
-            verticalSpaceLarge,
+            verticalSpaceMedium,
             
             buildInfoSection(
               title: "How do I renew and cancel?",
@@ -68,7 +65,7 @@ class SubscribeDetailsView extends StackedView<SubscribeDetailsViewmodel> {
             
             verticalSpaceLarge,
             
-            // 5. Subscribe Button
+            //Subscribe Button
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -87,9 +84,7 @@ class SubscribeDetailsView extends StackedView<SubscribeDetailsViewmodel> {
                   style: AppTextStyles.bodyBold.white,
                 ),
               ),
-            ),
-            
-            verticalSpaceLarge,
+            ),            
           ],
         ),
       ),
@@ -106,7 +101,7 @@ class SubscribeDetailsView extends StackedView<SubscribeDetailsViewmodel> {
           title,
           style: AppTextStyles.title2.black,
         ),
-        verticalSpaceMedium,
+        verticalSpaceSmall,
         Container(
           width: double.infinity,
           padding: const EdgeInsets.all(16),
